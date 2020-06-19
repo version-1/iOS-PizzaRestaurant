@@ -12,12 +12,14 @@
 @implementation Kitchen
 - (Pizza*) makePizzaWithSize:(PizzaSize)size :(NSArray *)toppings {
     Pizza *pizza = [[Pizza alloc] initWithSize: size];
+    NSMutableArray *list = [NSMutableArray new];
     for (id name in toppings) {
         Topping *topping = [[Topping alloc] initWithName:name];
         if (topping != nil) {
-          [pizza.toppings addObject:topping];
+          [list addObject:topping];
         }
     }
+    [pizza setToppings: list];
     return pizza;
 }
 

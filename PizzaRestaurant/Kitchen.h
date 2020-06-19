@@ -10,12 +10,5 @@
 #import "Pizza.h"
 
 @interface Kitchen : NSObject
-typedef NS_ENUM(NSInteger, PizzaSize) {
-    Small = 0,
-    Medium = 1,
-    Large = 2
-};
-
-
-- (instancetype) makePizzaWithSize: (PizzaSize)size :(NSArray *)toppings;
+- (Pizza*) makePizzaWithSize: (PizzaSize) size :(NSArray *)toppings;
 @end

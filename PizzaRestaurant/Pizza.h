@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Kitchen.h"
-NS_ASSUME_NONNULL_BEGIN
+
+typedef enum {
+    Small,
+    Medium,
+    Large
+} PizzaSize;
 
 @interface Pizza : NSObject
-@property NSInteger size;
+@property (assign) PizzaSize size;
 @property NSMutableArray *toppings;
-- (instancetype) initWithSize: (NSInteger) size ;
+- (instancetype) initWithSize: (PizzaSize) size ;
 - (NSString*) toString;
 @end
 
-NS_ASSUME_NONNULL_END
